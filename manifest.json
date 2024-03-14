@@ -1,0 +1,44 @@
+{
+  "name": "Beemail",
+  "version": "0.1",
+  "description": "Free, simple email tracking",
+  "page_action": {
+    "default_icon": {
+      "16": "image/beemail-logo-16x16.webp",
+      "32": "image/beemail-logo-32x32.webp",
+      "48": "image/beemail-logo-48x48.webp",
+      "64": "image/beemail-logo-64x64.webp",
+      "128": "image/beemail-logo-128x128.webp"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mail.google.com/mail/*"
+      ],
+      "js": [
+        "script.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "icons": {
+    "16": "image/beemail-logo-16x16.webp",
+    "32": "image/beemail-logo-32x32.webp",
+    "48": "image/beemail-logo-48x48.webp",
+    "64": "image/beemail-logo-64x64.webp",
+    "128": "image/beemail-logo-128x128.webp"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self'"
+}
